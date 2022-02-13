@@ -7,8 +7,8 @@
         <title>Noor Takaful Insurance Limited</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='css/bootstrap.min.css' rel='stylesheet'>
-        <link href='animate.css'>
+        <link href='assets/css/bootstrap.min.css' rel='stylesheet'>
+        <link href='assets/css/animate.css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <style>
@@ -37,7 +37,7 @@ body {
 }
 
 body{
- background-image: url("images/Lib1.jpg");
+ background-image: url("assets/images/Lib1.jpg");
   height: 600px;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -45,7 +45,7 @@ body{
 }
 
 .container{
-   background-image: url("images/Lib2.jpg");
+   background-image: url("assets/images/Lib2.jpg");
   height: 400px;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -73,7 +73,7 @@ body{
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li>
-                <a href="index.php"><img src="images/Logo2.PNG" class="img-fluid" alt="Sample image" style="margin-right:300px"></a>
+                <a href="index.php"><img src="assets/images/Logo2.PNG" class="img-fluid" alt="Sample image" style="margin-right:300px"></a>
               </li>
               <li class="nav-item active">
                 <a type="button" class="btn btn-primary" class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>

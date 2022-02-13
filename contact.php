@@ -10,10 +10,10 @@
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
         <!-- Place favicon.ico in the root directory -->
-        <link href='css/bootstrap.min.css' rel='stylesheet'>
-        <link href='animate.css'>
+        <link href='assets/css/bootstrap.min.css' rel='stylesheet'>
+        <link href='assets/css/animate.css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 
 
 
@@ -43,7 +43,7 @@ body {
 }
 
 body{
- background-image: url("images/Library.jpg");
+ background-image: url("assets/images/Library.jpg");
   height: 100px;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -51,7 +51,7 @@ body{
 }
 
 .container{
-   background-image: url("images/LibraryQuote.jpg");
+   background-image: url("assets/images/LibraryQuote.jpg");
   height: 50px;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -74,7 +74,7 @@ body{
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li>
-                <a href="index.php"><img src="images/Logo2.png" class="img-fluid" alt="Sample image" style="margin-right:400px"></a>
+                <a href="index.php"><img src="assets/images/Logo2.png" class="img-fluid" alt="Sample image" style="margin-right:400px"></a>
               </li>
               <li class="nav-item active">
                 <a type="button" class="btn btn-primary" class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
@@ -90,10 +90,6 @@ body{
             </ul>
           </div>
           <div>
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
-          </form>
       </div>
         </nav>
   </div>
@@ -104,35 +100,47 @@ body{
 <div>
  <h1 class="animate__animated animate__rubberBand" style="color: white;" align="center">"A big head with an empty brain is like a big load to the neck."</h1>
 </div>
-
 <div style="background-color: blue">
   <h3 align="center" style="color:white">Submit a book below</h3>
 </div>
-
+<?php
+  echo "<div class='alert alert-danger'><ul><li>This is real</li><li>This is nice</li><li>This is wonderful</li></ul></div>"
+?>
 </div>
 <br>
-<form action="" method="post">
-  <b><lable style="color:white">Name</lable></b>
-<input type="text" id="fullname" name="fullname" class="form-control"> <br>
+<form action="process.php" method="post">
+  <b><label style="color:white">Book Name</label></b>
+<input type="text" id="book_name" name="book_name" class="form-control" placeholder="Noor Takaful Guideline"> <br>
 
-<b><lable style="color:white">Email</lable></b>
-<input type="Email" id="cemail" name="cemail" class="form-control"> <br>
+<b><label style="color:white">Personel Email</label></b>
+<input type="email" id="user_email" name="user_email" class="form-control" placeholder="info@noortakaful.com"> <br>
 
-<b><lable style="color:white">Book</lable></b>
+<b><label style="color:white">Book department</label></b>
+<select  name="book_department" class="form-control" placeholder=""> 
+  <option value="">Select The Department the book belong to</option>
+  <option value=""></option>
+  <option value=""></option>
+  <option value=""></option>
+  <option value=""></option>
+  <option value=""></option>
+</select><br>
+
+<b><label style="color:white">Upload Book Pdf</label></b>
 <input type="file" id="file" name="file" class="form-control"> <br>
 
+
 <div>
-      <textarea cols="50" rows="10" id="cmessages" name="cmessages" class="form-control" name="text" placeholder="Enter Some Message about the book"></textarea>
+      <textarea cols="50" rows="10" id="book_description" name="book_description" class="form-control" name="text" placeholder="Enter Some Message about the book"></textarea>
 </div>
 
 <div class="form-group-checkbox" >
-    <label>
+    <label style="color: white;">
       <input type="checkbox" name="tnc" id="tnc" />
       I  agree to the terms and service agreenment
     </label>
   </div>
 
-<input type="submit" class="btn btn-primary" id="submit_msg" name="submit_msg" value="Submit">
+<input type="submit" class="btn btn-primary" id="submit" name="submit" value="Submit">
 
 </form>
 
@@ -176,8 +184,9 @@ body{
 <!-- Back to top button ends here -->
 
 
-  <script src=js/jquery.min.js></script>
-  <script type='text/javascript' src='js/popper.min.js'></script>
+  <script src=assets/js/jquery.min.js></script>
+  <script type='text/javascript' src='assets/js/popper.min.js'></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" language="javascript">
    
     //Get the button
