@@ -70,8 +70,8 @@ body{
           <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li>
                 <a href="index.php"><img src="assets/images/Logo2.png" class="img-fluid" alt="Sample image" style="margin-right:400px"></a>
@@ -104,39 +104,53 @@ body{
   <h3 align="center" style="color:white">Submit a book below</h3>
 </div>
 <?php
-  echo "<div class='alert alert-danger'><ul><li>This is real</li><li>This is nice</li><li>This is wonderful</li></ul></div>"
+  if (isset($_GET['upload_error'])) {
+
+    $upload_error = $_GET['upload_error']; 
+    $upload_errors = unserialize(urldecode($upload_error));
+
+    echo "<div class='alert alert-danger mt-3'><ul style='list-style-type: circle;'>";
+    foreach ($upload_errors as $upload_error) {
+      echo "<li>".$upload_error."</li>";
+    }
+    echo "</ul></div>";
+  }
 ?>
 </div>
 <br>
-<form action="process.php" method="post">
-  <b><label style="color:white">Book Name</label></b>
-<input type="text" id="book_name" name="book_name" class="form-control" placeholder="Noor Takaful Guideline"> <br>
+<form action="process.php" method="post" enctype="multipart/form-data">
+  <b><label style="color:white" for="book_name">Book Name</label></b>
+<input type="text" id="book_name" name="book_name" value="<?php (isset($_POST['book_name'])) ? $_POST['book_name'] : ''; ?>" class="form-control" placeholder="Noor Takaful Guideline"> <br>
 
-<b><label style="color:white">Personel Email</label></b>
-<input type="email" id="user_email" name="user_email" class="form-control" placeholder="info@noortakaful.com"> <br>
+<b><label style="color:white" for="user_email">Personel Email</label></b>
+<input type="email" id="user_email"  name="user_email" value="<?php (isset($_POST['user_email'])) ? $_POST['user_email'] : ''; ?>" class="form-control" placeholder="info@noortakaful.com"> <br>
 
-<b><label style="color:white">Book department</label></b>
-<select  name="book_department" class="form-control" placeholder=""> 
-  <option value="">Select The Department the book belong to</option>
-  <option value=""></option>
-  <option value=""></option>
-  <option value=""></option>
-  <option value=""></option>
-  <option value=""></option>
+<b><label style="color:white" for="book_department">Book department</label></b>
+<select  name="book_department" id="book_department" class="form-control" placeholder=""> 
+  <option value="">Select Book Department</option>
+  <option value="1">Legal</option>
+  <option value="2">General Takaful</option>
+  <option value="3">Family Takaful</option>
+  <option value="4">Marketing</option>
+  <option value="5">Finance/Account</option>
+  <option value="6">Administrative</option>
+  <option value="7">Information Technology</option>
+  <option value="8">General Knowledge</option>
 </select><br>
 
-<b><label style="color:white">Upload Book Pdf</label></b>
-<input type="file" id="file" name="file" class="form-control"> <br>
+<b><label style="color:white" for="book_pdf">Upload Book Pdf</label></b>
+<input type="file" id="book_pdf" name="book_pdf" class="form-control"> <br>
 
 
 <div>
+      <b><label style="color:white" for="book_description">Book Description</label></b>
       <textarea cols="50" rows="10" id="book_description" name="book_description" class="form-control" name="text" placeholder="Enter Some Message about the book"></textarea>
 </div>
 
 <div class="form-group-checkbox" >
-    <label style="color: white;">
+    <label>
       <input type="checkbox" name="tnc" id="tnc" />
-      I  agree to the terms and service agreenment
+      I  agree to the terms and service agreement
     </label>
   </div>
 
@@ -174,8 +188,8 @@ body{
 
 
 <!-- back to top begining -->
-<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-  <i class="fas fa-arrow-up">Top</i>
+<button type="button" class="btn btn-floating btn-lg" style="background-color: rgb(3, 72, 139); color: white;" id="btn-back-to-top">
+  <i class="fas fa-arrow-up"></i> Top
 </button>
 
 <!-- Back to top button -->
@@ -258,7 +272,7 @@ $(document).ready(function(){
 </script>
 
   <div style="padding:1px; background-color:#333745" class="container-fluid">
-    <h6 align="center" style="color:white">&copy; 2021</h6>
+    <h6 align="center" style="color:white">&copy; <?= date('Y')?></h6>
   <h6 align="center" style="color:white">Developed Noor Takaful ICT Dept. | 07036300546 </h6>
   </div>
 

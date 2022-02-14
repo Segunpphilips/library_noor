@@ -1,0 +1,2 @@
+Column 'book_department' cannot be null for upload of book Noor Takaful Guideline on Monday February 2022 05:37:36 AM.
+Column 'book_department' cannot be null for upload of book Noor Takaful Guideline on Monday February 2022 05:42:06 AM.

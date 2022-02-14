@@ -10,7 +10,7 @@
         <link href='assets/css/bootstrap.min.css' rel='stylesheet'>
         <link href='assets/css/animate.css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+        <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
   <style>
 
         #btn-back-to-top {
@@ -87,12 +87,6 @@ body{
             </ul>
           </div>
           <div>
-            <form class="form-inline my-2 my-lg-0">
-            
-            &nbsp;&nbsp;
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit" id="search">Search</button>
-          </form>
       </div>
         </nav>
   </div>
@@ -114,9 +108,6 @@ body{
 
 
 
-
- </form>
-
 <div id="displaydata"></div>
 <div>
   <h2 id="displaysucc"></h2>
@@ -128,39 +119,39 @@ body{
 
 <!--Begining of book link Modal -->
 <div class="row" style="padding: 10px; margin-top: 5px";>
-  <div class="col-sm-3">
+  <div class="col-sm-3 mt-3">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">General Takaful</h5>
         <p class="card-text">Welcome to the wall of General Business .</p>
-        <a href="book.php" class="btn btn-primary">Go somewhere</a>
+        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-3 mt-3">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Family Takaful</h5>
         <p class="card-text">Welcome to the wall of Family Business</p>
-        <a href="book.php" class="btn btn-primary">Go somewhere</a>
+        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-3 mt-3">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Marketing</h5>
         <p class="card-text">Welcome to the wall of Marketing.</p>
-        <a href="book.php" class="btn btn-primary">Go somewhere</a>
+        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-3 mt-3">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Finance/Account</h5>
         <p class="card-text">Welcome to the money home</p>
-        <a href="book.php" class="btn btn-primary">Go somewhere</a>
+        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
@@ -170,39 +161,39 @@ body{
 <br>
 
 <div class="row" style="padding: 10px; margin-top: 20px";>
-  <div class="col-sm-3">
+  <div class="col-sm-3 mt-3">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Legal</h5>
         <p class="card-text">Welcome to the legal room.</p>
-        <a href="book.php" class="btn btn-primary">Go somewhere</a>
+        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-3 mt-3">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Administrative</h5>
         <p class="card-text">Welcome to the Administrative office.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-3 mt-3">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Information Technology</h5>
-        <p class="card-text">Welcome to the Engine room of the organization.</p>
-        <a href="book.php" class="btn btn-primary">Go somewhere</a>
+        <p class="card-text">Welcome to the Engine room.</p>
+        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-3 mt-3">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">General Knowledge</h5>
         <p class="card-text">For your general knowledge materials .</p>
-        <a href="book.php" class="btn btn-primary">Go somewhere</a>
+        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
@@ -233,8 +224,8 @@ Charles W. Eliot"</h5>
 
 
 <!-- back to top begining -->
-<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-  <i class="fas fa-arrow-up">Top</i>
+<button type="button" class="btn btn-floating btn-lg" style="background-color: rgb(3, 72, 139); color: white;" id="btn-back-to-top">
+  <i class="fas fa-arrow-up"></i> Top
 </button>
 
 <!-- Back to top button -->
@@ -242,10 +233,9 @@ Charles W. Eliot"</h5>
 </div>
 <!-- Back to top button ends here -->
 
-  <script type='text/javascript' src='js/jquery.min.js'></script>
-  <script type='text/javascript' src='js/popper.min.js'></script>
-  <script text='javascript' src='js/bootstrap.js'></script>
-  <script src=js/jquery.min.js></script>
+  <script src=assets/js/jquery.min.js></script>
+  <script type='text/javascript' src='assets/js/popper.min.js'></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script type='text/javascript' src='js/popper.min.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script type="text/javascript" language="javascript">
@@ -324,13 +314,7 @@ $(document).ready(function(){
 
   <div style="padding:1px; background-color:#333745">
     <h6 align="center" style="color:white">&copy; 2022</h6>
-  <h6 align="center" style="color:white">Developed by Noor Takaful ICT Dept.| 07036300546 </h6>
-            <ul class="social-list">
-              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a href="#"><i class="fa fa-facebook"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-              <li><a  href="#"><i class="fa fa-facebook"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-              <li><a  href="#"><i class="fa fa-facebook"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-            </ul>
+    <h6 align="center" style="color:white">Developed by Noor Takaful ICT Dept.| 07036300546 </h6>
   </div>
 
 </div>
