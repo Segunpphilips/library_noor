@@ -82,7 +82,7 @@ body{
                 
               &nbsp;&nbsp;
             <li class="nav-item active">
-              <a type="button" class="btn btn-primary" class="nav-link" href="contact.php">Submit a book <span class="sr-only">(current)</span></a>
+              <a type="button" class="btn btn-primary" class="nav-link" href="form.php">Submit a book <span class="sr-only">(current)</span></a>
             </li>
             </ul>
           </div>
@@ -124,7 +124,7 @@ body{
       <div class="card-body">
         <h5 class="card-title">General Takaful</h5>
         <p class="card-text">Welcome to the wall of General Business .</p>
-        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
+        <a href="book-display.php?dept_id=2" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
@@ -133,7 +133,7 @@ body{
       <div class="card-body">
         <h5 class="card-title">Family Takaful</h5>
         <p class="card-text">Welcome to the wall of Family Business</p>
-        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
+        <a href="book-display.php?dept_id=3" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
@@ -142,7 +142,7 @@ body{
       <div class="card-body">
         <h5 class="card-title">Marketing</h5>
         <p class="card-text">Welcome to the wall of Marketing.</p>
-        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
+        <a href="book-display.php?dept_id=4" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
@@ -151,7 +151,7 @@ body{
       <div class="card-body">
         <h5 class="card-title">Finance/Account</h5>
         <p class="card-text">Welcome to the money home</p>
-        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
+        <a href="book-display.php?dept_id=5" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
@@ -166,7 +166,7 @@ body{
       <div class="card-body">
         <h5 class="card-title">Legal</h5>
         <p class="card-text">Welcome to the legal room.</p>
-        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
+        <a href="book-display.php?dept_id=1" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
@@ -175,7 +175,7 @@ body{
       <div class="card-body">
         <h5 class="card-title">Administrative</h5>
         <p class="card-text">Welcome to the Administrative office.</p>
-        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
+        <a href="book-display.php?dept_id=6" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
@@ -184,7 +184,7 @@ body{
       <div class="card-body">
         <h5 class="card-title">Information Technology</h5>
         <p class="card-text">Welcome to the Engine room.</p>
-        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
+        <a href="book-display.php?dept_id=7" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
@@ -193,7 +193,7 @@ body{
       <div class="card-body">
         <h5 class="card-title">General Knowledge</h5>
         <p class="card-text">For your general knowledge materials .</p>
-        <a href="book-display.php" class="btn btn-primary">Visit Library</a>
+        <a href="book-display.php?dept_id=8" class="btn btn-primary">Visit Library</a>
       </div>
     </div>
   </div>
@@ -224,7 +224,7 @@ Charles W. Eliot"</h5>
 
 
 <!-- back to top begining -->
-<button type="button" class="btn btn-floating btn-lg" style="background-color: rgb(3, 72, 139); color: white;" id="btn-back-to-top">
+<button type="button" class="btn btn-floating btn-lg" style="background-color: rgb(41, 118, 219); color: white;" id="btn-back-to-top">
   <i class="fas fa-arrow-up"></i> Top
 </button>
 

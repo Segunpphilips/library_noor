@@ -1,0 +1,1 @@
+You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Takaful Guideline' at line 1 for update of book by adminNoor Takaful Guideline on Monday February 2022 05:16:58 PM.

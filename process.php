@@ -33,7 +33,7 @@ if (isset($_POST['submit']) ) {
     if (isset($error_upload)) {
 
         $error_upload = urlencode(serialize($error_upload));
-		header("Location: contact.php?upload_error=$error_upload");
+		header("Location: form.php?upload_error=$error_upload");
         exit;
 	}
 
@@ -53,7 +53,7 @@ if (isset($_POST['submit']) ) {
 
             $error_upload[] = "Please select a file for upload";
             $error_upload = urlencode(serialize($error_upload));
-            header("Location: contact.php?upload_error=$error_upload");
+            header("Location: form.php?upload_error=$error_upload");
             exit;
         }else{
             //check for the right file extension
@@ -66,7 +66,7 @@ if (isset($_POST['submit']) ) {
             if ($file_ext != $extension) {
                 $error_upload[] = "Only pdf documents are allowed";
                 $error_upload = urlencode(serialize($error_upload));
-                header("Location: contact.php?upload_error=$error_upload");
+                header("Location: form.php?upload_error=$error_upload");
                 exit;
             }else{
                
@@ -93,9 +93,23 @@ if (isset($_POST['submit']) ) {
 
 		//Calling updateProfilePicture method to upload profile picture
 		$output = $obj->addBook($book_title, $personel_email, $book_slug, $book_description, $book_pdf, $book_name, $book_department);
-
-        header("Location: contact.php?msg=$output");
+        header("Location: form.php?msg=$output");
 		exit;
     }
     
 };
+
+if (isset($_POST['book_update'])) {
+    //  echo "I got here";
+
+      //create Books instance
+		$obj = new Books;
+        $book_pdf = $_POST['book_pdf'];
+        $book_name = $_POST['book_name'];
+        $output = $obj->adminBookUpload($book_pdf, $book_name);
+        if (empty($output)) {
+            $output = "<div class='alert alert-danger p-3'>Oops! Something went wrong, please try to upload again..</div>";
+        }
+        header("Location: admin-door.php?msg=$output");
+		exit;
+}

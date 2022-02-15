@@ -1,3 +1,16 @@
+<?php
+
+include_once "classes.php";
+  //create Books instance
+  $obj = new Books;
+  
+  $books = $obj->getRawUpdate();
+
+  // echo "<pre>";
+  // var_dump($books);
+	// echo "</pre>";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +26,12 @@
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <style>
         #body-div{
-        background-image: url("assets/images/Lib1.jpg");
-          height: 700px;
+        background-image: url("assets/images/library1.jpg");
+          height: 300px;
           background-repeat: no-repeat;
           background-attachment: scroll;
           background-size: cover;
+          position: relative;
         }
 
     </style>
@@ -33,27 +47,82 @@
         <div class="collapse navbar-collapse align-items-center" id="collapsibleNavId">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link btn btn-primary" href="index.php">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link btn btn-primary text-light" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+            <li class="nav-item ml-md-4">
+              <a class="nav-link btn btn-primary text-light" href="form.php">Submit a book</a>
             </li>
           </ul>
         </div>
       </nav>
-      <div>
-          <h1>Welcome to ICT LIBRARY</h1>
+      <div class="container-fluid text-center mb-md-5"  id="body-div">
+        <div class="row" style="height: auto; position: absolute; top: 45%; left: 35%; margin: 0; -ms-transform: translateY(-50%); transform: translateY(-50%) !important;">
+            <div class="col justify-content-center">
+                <h1 class="text-light text-center">Admin Book Upload</h1>
+            </div>
+        </div>
       </div>
-      <div class="container-fluid" style="min-height: 35rem;" id="body-div">
+      <div class="row mt-4" style="min-height: 35rem;">
+        
+        <?php
+        if (isset($_GET['msg'])) {
+          echo "<div class='col-12'>".$_GET['msg']."</div>";
+        }
 
+        if (is_array($books)) {
+          $kounter = 0;
+          foreach ($books as $book) {
+            ++$kounter;
+        ?>
+          <div class="col-md-3 col-sm-12">
+            <div style="min-height: 20rem;">
+              <div class="card" style="width: 18rem;">
+                <img src="assets/images/library2.jpg" class="card-img-top" height="200px" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><?=$book['book_name']?></h5>
+                  <p class="card-text">A library of books to fufil the needs of employees. Noor Takaful your win-win Insurance platform</p>
+                  <div class="row">
+                    <div class="col"><form action="process.php" method="post"><input type="hidden" name="book_pdf" value="<?=$book['book_pdf']?>"><input type="hidden" name="book_name" value="<?=$book['book_name']?>"><button type="submit" class="btn btn-info" name="book_update">Upload</button></form></div>
+                    <div class="col"><a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#viewBook<?=$kounter?>">View</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- View Book Modal -->
+        <div class="modal fade" id="viewBook<?=$kounter?>" tabindex="-1" aria-labelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><?=$book['book_name']?></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" style="height: 80vh;">
+                <iframe src="assets/book_upload/<?=$book['book_pdf']?>" frameborder="0" width="100%" height="620px" allowfullscreen></iframe>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php
+             }
+          }else{
+            echo $books;
+          }
+        ?>
       </div>
-      <footer class="">
-        <div style="padding:1px; background-color:#333745" class="align-item">
-          <h6 class="text-center" style="color:white">&copy; 2022</h6>
+      <footer class="row">
+        <div class="align-item col" style="padding:1px; background-color:#333745" >
+          <h6 class="text-center" style="color:white">&copy; <?=date('Y')?></h6>
           <h6 class="text-center" style="color:white">Developed by Noor Takaful ICT Dept. | 07036300546 </h6>
         </div>
       </footer>
     </div>
+
     <script src=assets/js/jquery.min.js></script>
     <script type='text/javascript' src='assets/js/popper.min.js'></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,1 @@
+You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Takaful Guideline LIMIT 1' at line 1 for delete of book Noor Takaful Guideline by admin on Monday February 2022 05:23:37 PM.
