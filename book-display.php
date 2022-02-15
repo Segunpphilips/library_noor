@@ -41,13 +41,6 @@ include_once "classes.php";
           background-size: cover;
           position: relative;
         }
-        .fullScreen {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        }
     </style>
 </head>
 <body>
@@ -112,7 +105,6 @@ include_once "classes.php";
                 <iframe src="assets/book_upload/<?=$book['book_pdf']?>" id="iframe" frameborder="0" width="100%" height="620px" allowfullscreen></iframe>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="fullscreen">View Fullscreen</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
@@ -137,9 +129,7 @@ include_once "classes.php";
     <script type='text/javascript' src='assets/js/popper.min.js'></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="">
-        $('#fullscreen').click(function(){
-            $('#viewBook').addClass("fullScreen")
-        })
+        
     </script>
 </body>
 </html>
