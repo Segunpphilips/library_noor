@@ -12,6 +12,7 @@
         <!-- Place favicon.ico in the root directory -->
         <link href='assets/css/bootstrap.min.css' rel='stylesheet'>
         <link href='assets/css/animate.css'>
+        <link href='assets/css/dropzone.css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 
@@ -142,8 +143,8 @@ body{
   <option value="8">General Knowledge</option>
 </select><br>
 
-<b><label style="color:white" for="book_pdf">Upload Book Pdf</label></b>
-<input type="file" id="book_pdf" name="book_pdf" class="form-control"> <br>
+<b style="color:white"><label  for="book_pdf">Upload Book Pdf </label> (<small>Drag and drop files here too</small>)</b>
+<input type="file" id="book_pdf" name="book_pdf" class="form-control dropzone" style="height: 80px;"> <br>
 
 
 <div>
@@ -205,8 +206,11 @@ body{
   <script src=assets/js/jquery.min.js></script>
   <script type='text/javascript' src='assets/js/popper.min.js'></script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dropzone.js"></script>
   <script type="text/javascript" language="javascript">
-   
+    // Dropzones    
+    Dropzone.discover();
+
     //Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
